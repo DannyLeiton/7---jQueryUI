@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Accordion icons</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	var iconos = {
+		header: "ui-icon-circle-arrow-e",
+		activeHeader: "ui-icon-circle-arrow-s"
+	};
+	$("#acordeon").accordion({icons:iconos});
+	$("button").button().click(function(){
+		if($("#acordeon").accordion("option", "icons")){
+			$("#acordeon").accordion("option", "icons", null);
+		} else {
+			$("#acordeon").accordion("option", "icons", iconos);
+		}
+	});
+}	
+</script>
+<style>
+	img{
+		margin-left:200px;
+	}
+</style>
+</head>
+<body>
+	<div id="acordeon">
+		<h3>Mario Bross</h3>
+		<div>
+			<img src="images/mario.png">
+		</div>
+		<h3>Luigi</h3>
+		<div>
+			<img src="images/luigi.png">
+		</div>
+		<h3>Yoshi</h3>
+		<div>
+			<img src="images/yoshi.png">
+		</div>
+	</div>
+	<button>Iconos</button>
+</body>
+</html>

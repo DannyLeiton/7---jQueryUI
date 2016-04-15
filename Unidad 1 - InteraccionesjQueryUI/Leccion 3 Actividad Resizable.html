@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>0103-Jquery</title>
+<style>
+#imagen{
+	width:200px;
+	height:250px;
+	padding:5px;
+	border:solid black 1px;	
+}
+#contenedor{
+	width:500px;
+	height:620px;
+	border:solid black 2px;
+}
+</style>
+<link href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" rel="stylesheet"/>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script>
+$(function(){
+	$("#imagen").resizable({containment:"#contenedor"});
+});
+
+</script>
+</head>
+
+<body>
+<div id="contenedor" class="ui-widget-content">
+    <div id="imagen" class="ui-widget-content">
+    <img src="images/yoshi.png" width="100%"/>
+    </div>
+ </div>   
+</body>
+</html>

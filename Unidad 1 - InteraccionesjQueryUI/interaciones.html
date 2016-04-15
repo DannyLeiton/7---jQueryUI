@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Interaciones</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+
+</style>
+<script>
+$(function(){
+	$(".ui-widget a").hover(function(){
+		$(this).parent().addClass("ui-state-hover");
+	}, 
+	function(){
+		$(this).parent().removeClass("ui-state-hover");
+	});
+})
+</script>
+</head>
+<body>
+	<div class="ui-widget">
+    	<div class="ui-state-default ui-state-active ui-corner-all">
+        	<a href="#">Elemento seleccionable</a>
+        </div>
+        <div class="ui-state-default ui-corner-all">
+        	<a href="#">Elemento NO seleccionable</a>
+        </div>
+    </div>
+</body>
+</html>

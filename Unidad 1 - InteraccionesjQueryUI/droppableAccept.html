@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Droppable Accept</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#mario, #luigi{
+	width:200px;
+	height:250px;
+	padding:5px;
+	float:left;
+}
+#zonaMario, #zonaLuigi{
+	background-color:gray;
+	width:300px;
+	height:300px;
+	margin:10px;
+	float:left;
+}
+p{text-align:center;}
+</style>
+<script>
+$(function(){
+	$("#mario, #luigi").draggable({revert: "invalid" });
+	$("#zonaMario").droppable({
+		 accept: "#mario",
+		 drop: onSueltaMario
+	});
+	$("#zonaLuigi").droppable({
+		 accept: "#luigi",
+		 drop: onSueltaLuigi
+	});
+});
+function onSueltaMario(event,ui){
+	$("#zonaMario").css("background-color", "red");
+	$("#zonaMario").html("<p>Este es Mario</p>");
+}
+function onSueltaLuigi(event,ui){
+	$("#zonaLuigi").css("background-color", "green");
+	$("#zonaLuigi").html("<p>Este es Luigi</p>");
+}
+</script>
+</head>
+<body>
+<div id="mario" class="ui-widget-content">
+	<img src="images/mario.png" width="195px">
+</div>
+<div id="luigi" class="ui-widget-content">
+	<img src="images/luigi.png" width="195px">
+</div>
+<div id="zonaMario" class="ui-widget-header"><p>Aqui va Mario</p></div>
+<div id="zonaLuigi" class="ui-widget-header"><p>Aqui va Luigi</p></div>
+</body>
+</html>

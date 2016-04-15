@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sortable Images</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#lista").sortable().selectable();
+});
+</script>
+<style>
+#lista{
+	list-style:none;
+	margin:0px;
+	padding:0px; 
+	width:780px; 
+}
+#lista li{
+	margin:3px;
+	padding:1px;
+	float:left;
+	width:250px;
+	height:300px;
+	text-align:center;
+	font-size:4em;
+	border: solid 1px gray;
+}
+#lista .ui-selecting{
+	background:blue;
+	color:white;
+}
+#lista .ui-selected{
+	background:yellow;
+}
+</style>
+</head>
+<ol id="lista">
+	<li><img src="images/bowser.jpg"></li>
+	<li><img src="images/luigi.png"></li>
+	<li><img src="images/mario.png"></li>
+	<li><img src="images/toad.jpg"></li>
+	<li><img src="images/wario.png"></li>
+	<li><img src="images/yoshi.png"></li>
+</ol>
+</html>

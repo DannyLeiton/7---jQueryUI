@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Draggable En X</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#arrastrame").draggable({cursor:"move", 
+								cursorAt:{top:125, left:125}, //Para q qd en el puro centro.
+								containment:"#contenedor"});
+}	
+</script>
+<style>
+#arrastrame{
+	background-image:url(images/mario.png);
+	width:250px;
+	height:250px;
+}
+#contenedor{
+	width:500px;
+	height:500px;
+}
+</style>
+</head>
+<body>
+	<div id="contenedor">
+		<div id="arrastrame"></div>
+	</div>
+</body>
+</html>

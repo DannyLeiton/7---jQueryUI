@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sortable Accordion</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#acordeon").accordion({
+		collapsible:true,
+		heightStyle:"content",
+		header:"> div > h3"
+	})
+	.sortable({
+		axis:"y",
+		handle:"h3",
+		stop: function(event, ui){
+			ui.item.children("h3").triggerHandler("focusout");
+		}
+	}); 
+}	
+</script>
+<style>
+	img{
+		margin-left:200px;
+	}
+	.grupo{
+		zoom:1;
+	}
+</style>
+</head>
+<body>
+	<div id="acordeon">
+		<div class="grupo">
+			<h3>Mario Bross</h3>
+			<div>
+				<img src="images/mario.png">
+			</div>
+		</div>
+		<div class="grupo">
+			<h3>Luigi</h3>
+			<div>
+				<img src="images/luigi.png">
+			</div>
+		</div>
+		<div class="grupo">
+			<h3>Yoshi</h3>
+			<div>
+				<img src="images/yoshi.png">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

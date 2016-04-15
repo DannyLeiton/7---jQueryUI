@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Arrastrar y Soltar</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#arrastrable{
+	width:100px;
+	height:100px;
+	padding:5px;
+	float:left;
+	background-color:green;
+}
+#zona{
+	width:250px;
+	height:250px;
+	margin:10px;
+	float:left;
+	background-color:yellow;
+}
+</style>
+<script>
+$(function(){
+    $("#arrastrable").draggable({drop:onSuelta});
+    $("#zona").droppable();
+});
+function onSuelta(event,ui){
+	$("#zona").css("background-color", "orange");
+	$("#zona").text("Gracias!");
+}
+</script>
+</head>
+<body>
+<div id="arrastrable"></div>
+<div id="zona"><p>Suelta aqui el cuadro verde</p></div>
+</body>
+</html>

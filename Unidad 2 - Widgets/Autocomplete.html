@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Widget Autocomplete</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+var marioBross = ["Mario", "Luigi", "Wario", "Toad", "Bowser", "Yoshi"];
+$(document).ready(inicio);
+function inicio(){
+	$("#marioBChars").autocomplete({source:marioBross});
+}	
+</script>
+</head>
+<body>
+	<input type="text" id="marioBChars"/>
+</body>
+</html>

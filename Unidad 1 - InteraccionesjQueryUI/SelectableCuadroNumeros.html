@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Selectable Cuadro #</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#lista").selectable();
+});
+</script>
+<style>
+#lista{
+	list-style:none;
+	margin:0px;
+	padding:0px; 
+	width:450px; 
+}
+#lista li{
+	margin:3px;
+	padding:1px;
+	float:left;
+	width:100px;
+	height:80px;
+	text-align:center;
+	font-size:4em;
+}
+#lista .ui-selecting{
+	background:blue;
+	color:white;
+}
+#lista .ui-selected{
+	background:yellow;
+}
+</style>
+</head>
+<ol id="lista">
+	<li class="ui-widget-content">0</li>
+	<li class="ui-widget-content">1</li>
+	<li class="ui-widget-content">2</li>
+	<li class="ui-widget-content">3</li>
+	<li class="ui-widget-content">4</li>
+	<li class="ui-widget-content">5</li>
+	<li class="ui-widget-content">6</li>
+	<li class="ui-widget-content">7</li>
+	<li class="ui-widget-content">8</li>
+	<li class="ui-widget-content">9</li>
+	<li class="ui-widget-content">10</li>
+	<li class="ui-widget-content">11</li>	
+</ol>
+</html>
