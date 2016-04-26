@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Tabuladores</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#SuperMario").tabs({
+	});
+}	
+</script>
+<style type="text/css">
+	#SuperMario{
+		width:300;
+		margin:0 auto;
+	}
+	p{
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<div id="SuperMario">
+		<ul>
+			<li>
+				<a href="#mario">Mario</a>
+			</li>
+			<li>
+				<a href="#luigi">Luigi</a>
+			</li>
+			<li>
+				<a href="#yoshi">Yoshi</a>
+			</li>
+		</ul>
+		<div id="mario">
+			<p>
+				<img src="images/mario.png"/>
+			</p>		
+		</div>
+		<div id="luigi">
+			<p>
+				<img src="images/luigi.png"/>		
+			</p>
+		</div>
+		<div id="yoshi">
+			<p>
+				<img src="images/yoshi.png"/>		
+			</p>
+		</div>
+	</div>
+</body>
+</html>

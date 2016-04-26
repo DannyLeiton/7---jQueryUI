@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>0401-jQuery</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+
+</style>
+<script>
+$(function(){
+	//deslizador
+	$("#deslizador").slider({
+	    min:1,
+	    max:120,
+	    value:18,
+	    slide:tuEdad
+	});
+	
+	function tuEdad(event, ui){
+		$("#edad").val(ui.value);
+	}
+	$("#edad").val($("#deslizador").slider("value"));
+})
+</script>
+</head>
+<body>
+<p>
+<label for="edad">Edad: </label>
+<input id="edad" type="text">
+</p>
+<div id="deslizador"></div>
+</body>
+</html>

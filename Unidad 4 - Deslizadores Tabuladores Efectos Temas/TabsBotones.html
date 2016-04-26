@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Tabs Botones</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#tabs{width:850px;}
+#tabs .tabs-spacer{float:left; height:500px;}
+.tabs-bottom .ui-tabs-nav{clear:left; padding:0 .2em .2em .2em;}
+.tabs-bottom .ui-tabs-nav li{
+		top:auto; 
+		bottom: 0; 
+		magin:0 .2em 1px 0; 
+		border-bottom:auto; 
+		border-top:0;
+}
+.tabs-bottom .ui-tabs-nav li.ui-tabs-active{
+		margin-top: -1px;
+		padding-top: 1px;
+}
+</style>
+<script>
+$(function(){
+	$("#tabs").tabs();
+	
+	$(".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *").
+    removeClass("ui-corner-all ui-corner-top").
+    addClass("ui-corner-bottom");
+   
+    $(".tabs-bottom .ui-tabs-nav").appendTo(".tabs-bottom");
+});
+</script>
+</head>
+<body>
+<div id="tabs" class="tabs-bottom">
+	<ul>
+    	<li><a href="#tab1">Uno</a></li>
+    	<li><a href="#tab2">Dos</a></li>
+        <li><a href="#tab3">Tres</a></li>
+    </ul>
+    <div class="tabs-spacer"></div>
+    <div id="tab1">
+        <img src="imagenes/afrodita.jpg" height="500">
+    </div>
+    <div id="tab2">
+         <img src="imagenes/afrodita2.jpg" height="500">
+    </div>
+    <div id="tab3">
+         <img src="imagenes/fondos/el_partenon.jpg" height="500">
+    </div>
+
+</div>
+</body>
+</html>

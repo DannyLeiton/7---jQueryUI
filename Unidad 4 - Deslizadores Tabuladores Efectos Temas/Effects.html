@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Efectos</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$(document).click(function(){
+		$("div").effect("explode", "easeOutCubic", 1000);
+	});
+}	
+</script>
+<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		background-color: gray;
+		border:black 2px solid; 
+	}
+</style>
+</head>
+<body>
+	<p>Click it</p>
+	<div></div>
+	<div></div>
+</body>
+</html>

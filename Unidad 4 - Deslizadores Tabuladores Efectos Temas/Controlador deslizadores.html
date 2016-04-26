@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Controlador slide-change</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+	p{
+		padding:4px;
+	}
+	span{
+		float:left;
+		margin:-2px 5px 0 0;
+	}
+	#rojo, #verde, #azul{
+		float:left;
+		clear:left;
+		width:300px;
+		margin:15px; 
+	}
+	#cuadro{
+		width:120px;
+		height:100px;
+		margin-top:30px;
+		margin-left:350px;
+		background-image:none;
+	}
+	#rojo .ui-slider-range{background:red;}
+	#rojo .ui-slider-handle{border-color:red;}
+	#verde .ui-slider-range{background:green;}
+	#verde .ui-slider-handle{border-color:green;}
+	#azul .ui-slider-range{background:blue;}
+	#azul .ui-slider-handle{border-color:blue;}
+</style>
+<script type="text/javascript">
+/*
+ * Ejercicio tomado de la página de JQuery-UI
+ */
+
+$(document).ready(inicio);
+
+function inicio(){
+	$("#rojo, #verde, #azul").slider({
+		orientation:"horizontal",
+		ran:"min",
+		max:255,
+		value:127,
+		slide:refresca,
+		change:refresca
+	});
+	$("#rojo").slider("value", 255);
+	$("#verde").slider("value", 140);
+	$("#azul").slider("value", 60);
+}	
+
+function refresca(){
+	var rojo = $("#rojo").slider("value");
+	var verde = $("#verde").slider("value");
+	var azul = $("#azul").slider("value");
+	var hex = convierteHex(rojo, verde, azul);
+	$("#cuadro").css("background-color", "#"+hex);
+}
+
+function convierteHex(r, v, a){
+	var hex = [r.toString(16), v.toString(16), a.toString(16)];
+	$.each(
+		hex, function(nr, val){
+				if(val.length === 1){
+					hex[nr] = "0"+val; //05
+				}
+			}
+	);
+	return hex.join("").toUpperCase();
+}
+
+</script>
+</head>
+<body class="ui-widget-content">
+	
+	<p class="ui-state-default ui-corner-all ui-helper-clear-fix">
+		<span class="ui-icon ui-icon-pencil"></span>
+		Seleccione su color
+	</p>
+	
+	<div id="rojo"></div>
+	<div id="verde"></div>
+	<div id="azul"></div>
+
+	<div id="cuadro" class="ui-widget-content ui-corner-all"></div>
+
+</body>
+</html>

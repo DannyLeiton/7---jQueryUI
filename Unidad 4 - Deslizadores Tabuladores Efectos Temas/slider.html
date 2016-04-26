@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>slider</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#slider").slider({
+		range:"max",
+		min:1,
+		max:10,
+		value:5,
+		slide:numAdultos
+	});
+
+	function numAdultos(event, ui){
+		$("#adultos").val(ui.value);
+	}
+	$("#adultos").val($("#slider").slider("value"));
+}	
+</script>
+</head>
+<body>
+	<p>
+		<label for="adultos">Num Min de Adultos</label>
+		<input type="text" id="adultos"/>
+	</p>
+	<div id="slider"></div>
+</body>
+</html>

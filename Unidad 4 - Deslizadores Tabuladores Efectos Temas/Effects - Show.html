@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Efecto Show</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#boton").click(function(){
+		correEfecto();
+	});
+	function correEfecto(){
+		var efectoSel = $("#efectos").val();
+		var objeto = {}
+		if(efectoSel == "scale"){
+			objeto = {percent:0};
+		}
+		else if(efectoSel == "size"){
+			objeto = {to:{width:50, height:50}};
+		}
+		$("#efecto").effect(efectoSel, objeto, 1000, finEfecto);
+	}
+	function finEfecto(){
+		setTimeout(function(){
+			$("#efecto").removeAttr("style").hide.fadeIn();
+		}, 1000)
+	}
+}	
+</script>
+<style type="text/css">
+	.caja{
+		width:500px;
+		height:200px;
+		background-color: gray;
+		border:black 2px solid; 
+	}
+	#boton{
+		padding: .5em 1em;
+		text-decoration: none;
+	}
+	#efecto{
+		width:220px;
+		height:300px;
+		padding:0.4em;
+		position:relative;
+	}
+	#efecto h3{
+		margin:0.2em;
+		padding:0.5em;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div id="efecto" class="ui-widget-content ui-corner-all">
+		<h3 class="ui-widget-header ui-corner-all">
+			Show
+		</h3>
+		<img src="images/toad.jpg">
+	</div>
+	<select id="efectos">
+		<option value="blind">Blind</option>
+		<option value="bounce">Bounce</option>
+		<option value="clip">Clip</option>
+		<option value="drop">Drop</option>
+		<option value="explode">Explode</option>
+		<option value="fold">Fold</option>
+		<option value="highlight">HighLight</option>
+		<option value="puff">Puff</option>
+		<option value="scale">Scale</option>
+		<option value="shake">Shake</option>
+		<option value="size">Size</option>
+		<option value="slide">Slide</option>			
+	</select>
+	<button id="boton" class="ui-state-default ui-corner-all">
+		Trigger Effect
+	</button>
+</body>
+</html>

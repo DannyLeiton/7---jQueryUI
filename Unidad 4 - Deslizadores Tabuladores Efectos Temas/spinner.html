@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Spinner</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	var s = $("#spinner").spinner({
+								min:1,
+								max:10,
+								step:1
+							});
+	$("button").button();
+	$("#activa").click(function(){
+		if(s.spinner("option", "disabled")){
+			s.spinner("enable");
+		} else {
+			s.spinner("disable");
+		}
+	});
+	$("#destruye").click(function(){
+		if(s.data("ui-spinner")){
+			s.spinner("destroy");
+		} else {
+			s.spinner();
+		}
+	});
+	$("#getValue").click(function(){
+		alert(s.spinner("value"));
+	});
+	$("#setValue").click(function(){
+		s.spinner("value",10);
+	});
+}	
+</script>
+</head>
+<body>
+	<p>
+		<label for="spinner">Select:</label>
+		<input name="value" id="spinner"/>
+	</p>
+	<p>
+		<button id="activa">Enable/Disable</button>
+		<button id="destruye">Destroy/Create</button>
+	</p>
+	<p>
+		<button id="getValue">Get value</button>
+		<button id="setValue">Set value</button>
+	</p>
+</body>
+</html>
