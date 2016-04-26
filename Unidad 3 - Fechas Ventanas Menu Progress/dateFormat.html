@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Formatos datepicker</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#date").datepicker();
+	$("#formato").change(function(){
+		$("#date").datepicker("option", "dateFormat", $(this).val());
+	});
+}	
+</script>
+</head>
+<body>
+	<p>Fecha: <input type="text" id="date"></input></p><br>
+	<select id="formato">
+		<option value="mm/dd/yy">Formato por omision</option>
+		<option value="yy-mm-dd">ISO 8601</option>
+		<option value="d M, y">Formato corto</option>
+		<option value="d MM, y">Formato mediano</option>
+		<option value="DD, d MM, yy">Formato completo</option>
+		<option value="'dia' d 'de' MM 'del anio' yy">Texto</option>
+	</select>
+</body>
+</html>

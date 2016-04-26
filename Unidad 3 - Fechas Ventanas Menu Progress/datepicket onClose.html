@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>onClose y defaultDate</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#date1").datepicker({defaultDate:"+3d", //3 días
+							changeMonth:true,
+							onClose: function(fechaSeleccionada){
+								$("#date2").datepicker("option", "minDate", fechaSeleccionada);
+							}
+						});
+
+	$("#date2").datepicker({defaultDate:"+3d", //3 días
+							changeMonth:true,
+							onClose: function(fechaSeleccionada){
+								$("#date1").datepicker("option", "maxDate", fechaSeleccionada);
+							}
+						});
+	
+}	
+
+</script>
+</head>
+<body>
+	<p>Fecha Inicial: <input type="text" id="date1"></input></p><br>
+	<p>Fecha Final: <input type="text" id="date2"></input></p><br>
+</body>
+</html>

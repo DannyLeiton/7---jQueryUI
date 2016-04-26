@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>datepicker</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#date").datepicker({showOtherMonths: true,
+							selectOtherMonths: true });
+	$("#date2").datepicker({showButtonPanel: true});
+	//Cambio anio y mes
+	$("#date3").datepicker({showOtherMonths: true,
+							selectOtherMonths: true,
+							changeMonth: true,
+							changeYear: true,
+							numberOfMonths: 2,
+						    showButtonPanel: true,
+							showOn: "button",
+						    buttonImage: "images/calendar.gif",
+							buttonImageOnly:true,
+							minDate:-20,
+							maxDate:"+1M +10D",
+							showWeek: true});
+/*altField y altFormat*/
+$("#date4").datepicker({altField: "#seleccionado",
+						altFormat: "d M y"/*"MM DD, d, yy"*/ });
+
+
+}	
+</script>
+</head>
+<body>
+	<p>Fecha: <input type="text" id="date"></input></p><br>
+	<p>Fecha2: <input type="text" id="date2"></input></p><br>
+	<p>Fecha3: <input type="text" id="date3"></input></p><br>
+	<p>Fecha4: <input type="text" id="date4"></input></p><br>
+
+	<p>Fecha4: <input type="text" id="seleccionado"></input></p>
+
+</body>
+</html>

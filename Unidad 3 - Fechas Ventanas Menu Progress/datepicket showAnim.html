@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ShowAnim datepicker</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#date").datepicker({showButtonPanel:true,
+						   changeMonth:true,
+						   changeYear:true,
+						   numberOfMonths:3});
+	$("#animacion").change(function(){
+		$("#date").datepicker("option", "showAnim", $(this).val());
+	});
+}	
+
+</script>
+</head>
+<body>
+	<p>Fecha: <input type="text" id="date"></input></p><br>
+	<select id="animacion">
+		<option value="show">Default</option>
+		<option value="slideDown">slideDown</option>
+		<option value="fadeIn">fadeIn</option>
+		<option value="blind">blind</option>
+		<option value="bounce">bounce</option>
+		<option value="clip">clip</option>
+		<option value="drop">drop</option>
+		<option value="fold">fold</option>
+		<option value="slide">slide</option>
+		<option value="shake">shake</option>
+	</select>
+</body>
+</html>

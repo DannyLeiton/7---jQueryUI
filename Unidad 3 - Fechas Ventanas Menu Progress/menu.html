@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Dialog</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#menu").menu();
+}	
+</script>
+<style>
+	#menu{
+		width:125px;
+	}
+</style>
+</head>
+<body>
+	<ul id="menu" title="Advertencia">
+		<li>
+			<a href="#"><span class="ui-icon ui-icon-disk"></span>Mario</a>
+			<ul>
+				<li>
+					<a href="#">Luigi</a>
+				</li>
+				<li>
+					<a href="#">Wario</a>
+				</li>
+			</ul>
+		</li>
+		<li class="ui-state-disabled">
+			<a href="#"><span class="ui-icon ui-icon-zoomin"></span>Luigi</a>
+		</li>
+		<li>
+			<a href="#"><span class="ui-icon ui-icon-gear"></span>Wario</a>
+		</li>
+	</ul>
+</body>
+</html>
