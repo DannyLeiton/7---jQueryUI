@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Autocomplete Acentos</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+
+</style>
+<script>
+$(function(){
+	var paises = new Array();
+	paises.push("México");
+	paises.push("Canadá");
+	paises.push("Estados Unidos");
+	paises.push("Guatemala");
+	paises.push("Honduras");
+	paises.push("Nicaragua");
+	paises.push("Costa Rica");
+	paises.push("Cuba");
+	paises.push("República Dominicana");
+	
+	var acentos = {"é": "e", "ú":"u", "á":"a"};
+	var normalize = function(cadena){
+		var ret = "";
+		for(var i = 0; i<cadena.length; i++){
+			ret += acentos[cadena.charAt(i)] || cadena.charAt(i);
+		}
+		return ret;
+	}
+	
+	$("#pais").autocomplete({
+		source: function(request, response){
+			var cadena = new RegExp($.ui.autocomplete.escapeRegex(request.term,"i"));
+			response($.grep(paises, function(value){
+				value = value.label || value.value || value;
+				return cadena.test(value) || cadena.test(normalize(value));
+			}));
+		}
+	});
+})
+</script>
+</head>
+<body>
+<div class="ui-widget">
+	<label for="pais">País:</label>
+	<input id="pais"/>
+</div>
+
+
+</body>
+</html>

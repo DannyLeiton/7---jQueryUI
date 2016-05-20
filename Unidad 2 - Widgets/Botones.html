@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Botones</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("button").button();
+	$("a").button();
+	$("input[type=submit]").button();
+	$("#myButton").button({icons:{primary: "ui-icon-locked"}});
+	$("#myAnchor").button({icons:{primary: "ui-icon-triangle-1-s", secondary:"ui-icon-gear"}});
+}	
+</script>
+</head>
+<body>
+	<button>Jolines</button>
+	<a href="#">LinkedIn</a>
+	<input type="submit" value="SubmitIt"></input>
+	<input type="text" value="SubmitIt"></input>
+	<button id="myButton">Jolines tio</button>
+	<a id="myAnchor" href="#">LinkedIn Plus</a>
+</body>
+</html>

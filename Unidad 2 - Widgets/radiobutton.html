@@ -1,19 +1,22 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Widget Autocomplete</title>
+<title>radiobutton</title>
 <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/jquery-ui-1.10.1.custom.min.js"></script>
 <script type="text/javascript">
-var marioBross = ["Mario", "Luigi", "Wario", "Toad", "Bowser", "Yoshi", "Princess", "Koopa"];
 $(document).ready(inicio);
 function inicio(){
-	$("#marioBChars").autocomplete({source:marioBross});
+	$("#estado").buttonset();
 }	
 </script>
 </head>
 <body>
-	<input type="text" id="marioBChars"/>
+	<div id="estado">
+		<input type="radio" id="op1" name="radio"></input><label for="op1">Amateur</label>
+		<input type="radio" id="op2" name="radio"></input><label for="op2">Advanced</label>
+		<input type="radio" id="op3" name="radio"></input><label for="op3">Experto</label>
+	</div>
 </body>
 </html>

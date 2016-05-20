@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>buttonSet</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#encendido").button({icons:{primary:"ui-icon-locked"}});
+	$("#nivel").buttonset();
+}	
+</script>
+</head>
+<body>
+	<input type="checkbox" id="encendido"/><label for="encendido">TurnedOn/TurnedOff</label>
+	<br><br>
+	<div id="nivel">
+		<input type="checkbox" id="op1"></input><label for="op1">Amateur</label>
+		<input type="checkbox" id="op2"></input><label for="op2">Advanced</label>
+		<input type="checkbox" id="op3"></input><label for="op3">Experto</label>
+	</div>
+</body>
+</html>
